@@ -53,7 +53,7 @@ Includes article previews, post dates, and category tags for easy navigation.
 ### 🗺️ Map  
 ![Map Page](assets/img/screenshot/map.png)  
 An interactive map displaying my favorite places, travels, or project locations.  
-Uses embedded Google Maps for location visualization and smooth scrolling experience.
+Uses embedded Google Maps for location visualization and a smooth scrolling experience.
 
 
 ## ✨ Features
@@ -62,7 +62,6 @@ Uses embedded Google Maps for location visualization and smooth scrolling experi
 - Responsive layout using **CSS Grid** and **Flexbox** for both desktop and mobile.  
 - Smooth hover animations and minimalist user interface.  
 - Accessibility: descriptive alt text, readable fonts, and visible focus outlines.  
-- SEO optimization with meta tags and favicon setup.  
 
 ---
 
@@ -94,3 +93,5 @@ Author: Huỳnh Tuấn Anh
 Images / Icons: Free-use assets and personal resources. You can see on Instagram: @anhhuynh.photos
 
 Design Concept: Inspired by clean, modern web aesthetics
+
+Many thanks to the AI agent, such as ChatGPT for helping me to do this portfolio!
