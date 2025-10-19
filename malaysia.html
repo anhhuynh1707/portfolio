@@ -33,6 +33,16 @@
       height: auto;
       border-radius: 8px;
     }
+
+    .gallery-row {
+      margin-bottom: 2rem;
+    }
+
+    .gallery-images {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
   </style>
 </head>
 
@@ -52,55 +62,64 @@
   </header>
   <main>
     <header>
-      <h2>Malaysia</h2>
-      <p>Moments from the trip — sea breeze, sunlight, and sand dunes.</p>
+      <h2 class="text-center" style="font-size:2.2rem;font-family:'Playfair Display',serif;font-weight:700;margin-bottom:0.5rem;">Malaysia - 2024</h2>
+      <p class="text-center" style="font-size:1.15rem;color:#a67c52;font-weight:600;margin-bottom:0.7rem;">
+        A journey through Malaysia: culture, cityscapes, and nature.
+      </p>
     </header>
 
     <section aria-label="Gallery">
-      <article>
-        <figure>
-          <img src="assets/img/malaysia/DSC05200.jpg" alt="Beach morning view">
-          <figcaption>Beach morning view</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/malaysia/DSC05205.jpg" alt="Red sand dunes">
-          <figcaption>Red sand dunes</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/malaysia/DSC05514.jpg" alt="Fishing boats">
-          <figcaption>Fishing boats at harbor</figcaption>
-        </figure>
-      </article>
-
-      <article>
-        <figure>
-          <img src="assets/img/malaysia/DSC05553.jpg" alt="Sunset reflection">
-          <figcaption>Sunset reflection</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/malaysia/DSC05887.jpg" alt="Local market">
-          <figcaption>Local market</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/malaysia/DSC05562.jpg" alt="Coconut trees">
-          <figcaption>Coconut trees</figcaption>
-        </figure>
-      </article>
-
-      <article>
-        <figure>
-          <img src="assets/img/malaysia/DSC05678-2.jpg" alt="Sand trail">
-          <figcaption>Sand trail</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/malaysia/DSC05962.jpg" alt="Sea horizon">
-          <figcaption>Sea horizon</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/malaysia/DSC06065.jpg" alt="Beach café">
-          <figcaption>Beach café</figcaption>
-        </figure>
-      </article>
+      <div class="gallery-row">
+        <h3 class="text-center" style="font-size:1.15rem;color:#444;margin-bottom:1.2rem;">Kuala Lumpur & Petronas Towers</h3>
+        <div class="gallery-images">
+          <figure>
+            <img src="assets/img/malaysia/DSC05200.jpg" alt="Kuala Lumpur Tower at night">
+            <figcaption>Kuala Lumpur Tower at night</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/malaysia/DSC05205.jpg" alt="Petronas Twin Towers">
+            <figcaption>Petronas Twin Towers</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/malaysia/DSC05514.jpg" alt="Merdeka 118">
+            <figcaption>Merdeka 118</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="gallery-row">
+        <h3 class="text-center" style="font-size:1.15rem;color:#444;margin-bottom:1.2rem;">Street Life & Food</h3>
+        <div class="gallery-images">
+          <figure>
+            <img src="assets/img/malaysia/DSC05553.jpg" alt="Street food market">
+            <figcaption>Street food market</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/malaysia/DSC05562.jpg" alt="Night bazaar">
+            <figcaption>Night bazaar</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/malaysia/DSC05678-2.jpg" alt="Chinatown Kuala Lumpur">
+            <figcaption>Chinatown Kuala Lumpur</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="gallery-row">
+        <h3 class="text-center" style="font-size:1.15rem;color:#444;margin-bottom:1.2rem;">Nature & Parks</h3>
+        <div class="gallery-images">
+          <figure>
+            <img src="assets/img/malaysia/DSC05887.jpg" alt="Lake Gardens">
+            <figcaption>Lake Gardens</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/malaysia/DSC05962.jpg" alt="Batu Caves">
+            <figcaption>Batu Caves</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/malaysia/DSC05962.jpg" alt="Kuala Lumpur Bird Park">
+            <figcaption>Kuala Lumpur Bird Park</figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
   </main>
 

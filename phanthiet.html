@@ -33,23 +33,37 @@
       height: auto;
       border-radius: 8px;
     }
+
+    /* Optional: visually hide headings but keep them accessible */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 
 <body>
   <header>
     <nav aria-label="Main navigation">
-            <p><a href="index.html"><em>anh</em>huynh.1707</a></p>
-            <ul>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="projects.html">PROJECTS</a></li>
-                <li><a href="gallery.html" class="active">GALLERY</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="map.html">MAP</a></li>
-            </ul>
-        </nav>
+      <p><a href="index.html"><em>anh</em>huynh.1707</a></p>
+      <ul>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="gallery.html" class="active">GALLERY</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="map.html">MAP</a></li>
+      </ul>
+    </nav>
   </header>
+
   <main>
     <header>
       <h2>Phan Thiết</h2>
@@ -59,6 +73,7 @@
     <section aria-label="Gallery">
       <!-- Row 1 -->
       <article>
+        <h3 class="visually-hidden">Row 1</h3>
         <figure>
           <img src="assets/img/phanthiet/DSC00878.jpg" alt="Beach morning view">
           <figcaption>Beach morning view</figcaption>
@@ -72,7 +87,10 @@
           <figcaption>Fishing boats at harbor</figcaption>
         </figure>
       </article>
+
+      <!-- Row 2 -->
       <article>
+        <h3 class="visually-hidden">Row 2</h3>
         <figure>
           <img src="assets/img/phanthiet/DSC00901.jpg" alt="Sunset reflection">
           <figcaption>Sunset reflection</figcaption>
@@ -89,6 +107,7 @@
 
       <!-- Row 3 -->
       <article>
+        <h3 class="visually-hidden">Row 3</h3>
         <figure>
           <img src="assets/img/phanthiet/DSC00928.jpg" alt="Sand trail">
           <figcaption>Sand trail</figcaption>
