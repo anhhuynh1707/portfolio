@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designing with Semantics | Huỳnh Tuấn Anh</title>
+    <meta name="description" content="A guide on writing semantic, accessible HTML for modern web development.">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <p class="brand"><a href="index.html"><em>anh</em>huynh.1707</a></p>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="blog.html" class="active">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="map.html">MAP</a></li>
+                <li><a href="policy.html">POLICY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h1>Designing with Semantics: Building Accessible HTML</h1>
+                <p>
+                    <time datetime="2025-09-30">September 30, 2025</time> · 5 min read
+                    <br><small>Written by Huỳnh Tuấn Anh</small>
+                </p>
+            </header>
+
+            <section>
+                <h2>Why Semantics Matter</h2>
+                <p>
+                    Semantic HTML gives meaning to your content. It helps search engines understand your page structure
+                    and enables assistive technologies to guide users through your site more effectively.
+                </p>
+                <p>
+                    Instead of using endless <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements, semantic
+                    tags like
+                    <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and
+                    <code>&lt;footer&gt;</code>
+                    describe the role of content clearly — improving both accessibility and maintainability.
+                </p>
+            </section>
+
+            <section>
+                <h2>Examples of Semantic Elements</h2>
+                <ul>
+                    <li><strong>&lt;article&gt;</strong>: Independent content, like a blog post or comment.</li>
+                    <li><strong>&lt;section&gt;</strong>: Thematic grouping of content within a page.</li>
+                    <li><strong>&lt;aside&gt;</strong>: Supplemental info, like tips or related links.</li>
+                    <li><strong>&lt;figure&gt;</strong> and <strong>&lt;figcaption&gt;</strong>: For images with
+                        captions.</li>
+                    <li><strong>&lt;nav&gt;</strong>: For site or page-level navigation.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Accessibility Benefits</h2>
+                <p>
+                    Screen readers use semantic tags to identify sections of a page — such as navigation, main content,
+                    or articles.
+                    This allows visually impaired users to jump directly to relevant content and understand the
+                    hierarchy of information.
+                </p>
+                <p>
+                    In short, semantics = clarity. And clarity = usability.
+                </p>
+            </section>
+
+            <aside>
+                <h3>Quick Tip</h3>
+                <p>
+                    Always use headings (<code>&lt;h1&gt;...&lt;h6&gt;</code>) in logical order. Don’t skip levels — it
+                    helps accessibility tools create a proper document outline.
+                </p>
+            </aside>
+
+            <footer>
+                <p>Tags: <a href="#">#HTML</a> · <a href="#">#Accessibility</a> · <a href="#">#WebDesign</a></p>
+                <p><a href="blog.html">← Back to Blog</a></p>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <small>© 2025 Huỳnh Tuấn Anh | <a href="policy.html">Privacy Policy</a></small>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Usage Guidelines for Web Development Labs</title>
+    <style>
+        @media print {
+            .slide {
+                page-break-after: always;
+                break-after: page;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .slide {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            margin: 20px auto;
+            padding: 60px 80px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            border-bottom: 4px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 80px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 80px;
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #2980b9;
+            font-size: 24px;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        li {
+            margin-bottom: 18px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 24px;
+        }
+
+        .check-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .cross-list li:before {
+            content: "✗";
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #f39c12;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-left: 5px solid #27ae60;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .column-header {
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .good {
+            color: #27ae60;
+        }
+
+        .bad {
+            color: #e74c3c;
+        }
+
+        code {
+            background: #f8f9fa;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #c7254e;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .conversation {
+            margin: 15px 0;
+        }
+
+        .user-msg {
+            color: #2980b9;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .ai-msg {
+            color: #27ae60;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .big-number {
+            font-size: 72px;
+            font-weight: bold;
+            color: #3498db;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .title-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title-slide h1 {
+            font-size: 52px;
+            margin-bottom: 30px;
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #2980b9;
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        .workflow-step {
+            background: white;
+            border: 2px solid #3498db;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print Slides</button>
+
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <div class="content">
+            <h1>Using AI Effectively in<br>Web Development & Net-Centric Labs</h1>
+            <p class="subtitle" style="font-size: 24px; margin-top: 20px;">Guidelines for Responsible AI Usage</p>
+            <p style="margin-top: 60px; font-size: 18px; color: #7f8c8d;">
+                Course: Web Development & Net-Centric Computing<br>
+                Academic Year 2024-2025
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Core Philosophy -->
+    <div class="slide">
+        <div class="header">
+            <h2>Core Philosophy</h2>
+        </div>
+        <div class="content">
+            <div class="highlight-box">
+                <h3 style="margin-top: 0;">AI as a Learning Partner, Not a Replacement</h3>
+                <p style="font-size: 20px; margin-top: 15px;">
+                    The goal is to <strong>enhance your understanding</strong>, not bypass the learning process.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 40px;">Think of AI as:</h3>
+            <ul style="font-size: 20px;">
+                <li>A tutor who guides you</li>
+                <li>A pair programming partner</li>
+                <li>A reference book you can ask questions</li>
+                <li>A code reviewer who provides feedback</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">NOT as:</h3>
+            <ul class="cross-list" style="font-size: 20px;">
+                <li>Someone to do your homework</li>
+                <li>A shortcut to avoid learning</li>
+                <li>A replacement for your own thinking</li>
+            </ul>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">2</div>
+    </div>
+
+    <!-- Slide 3: The 80/20 Rule -->
+    <div class="slide">
+        <div class="header">
+            <h2>The 80/20 Rule</h2>
+        </div>
+        <div class="content">
+            <div class="big-number">80%</div>
+            <div class="success-box">
+                <p style="font-size: 22px; text-align: center; font-weight: 600;">
+                    You should write at least 80% of your code yourself
+                </p>
+            </div>
+
+            <h3>AI should assist with the remaining 20%:</h3>
+            <ul>
+                <li>When you're genuinely stuck after trying</li>
+                <li>Understanding complex concepts</li>
+                <li>Reviewing and improving your work</li>
+                <li>Learning new patterns or techniques</li>
+                <li>Debugging stubborn issues</li>
+            </ul>
+
+            <div class="warning-box" style="margin-top: 40px;">
+                <p style="font-size: 18px;">
+                    <strong>Warning:</strong> If you rely on AI for more than 20% of your code, you're likely not learning effectively!
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">3</div>
+    </div>
+
+    <!-- Slide 4: Appropriate Uses (Part 1) -->
+    <div class="slide">
+        <div class="header">
+            <h2>✓ Appropriate Uses of AI</h2>
+        </div>
+        <div class="content">
+            <h3>1. Understanding Concepts</h3>
+            <ul class="check-list">
+                <li>Ask for explanations of technical concepts</li>
+                <li>Request examples to illustrate how something works</li>
+                <li>Compare different approaches</li>
+                <li>Get clarification on error messages</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Good Example:</strong><br>
+                "Can you explain how async/await works in JavaScript compared to promises?"
+            </div>
+
+            <h3>2. Debugging Assistance</h3>
+            <ul class="check-list">
+                <li>Paste error messages and ask for possible causes</li>
+                <li>Request help understanding why code isn't working</li>
+                <li>Ask for debugging strategies</li>
+                <li><strong>Important:</strong> Always try to debug yourself first!</li>
+            </ul>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">4</div>
+    </div>
+
+    <!-- Slide 5: Appropriate Uses (Part 2) -->
+    <div class="slide">
+        <div class="header">
+            <h2>✓ Appropriate Uses of AI (continued)</h2>
+        </div>
+        <div class="content">
+            <h3>3. Code Review and Improvement</h3>
+            <ul class="check-list">
+                <li>Ask for feedback on code you've written</li>
+                <li>Request suggestions for best practices</li>
+                <li>Learn about optimization techniques</li>
+                <li>Understand security implications</li>
+            </ul>
+
+            <h3>4. Learning New Technologies</h3>
+            <ul class="check-list">
+                <li>Get an overview of a new framework</li>
+                <li>Ask for step-by-step tutorials on features</li>
+                <li>Understand project structure and patterns</li>
+                <li>Learn about ecosystem best practices</li>
+            </ul>
+
+            <h3>5. Planning and Architecture</h3>
+            <ul class="check-list">
+                <li>Discuss different approaches before coding</li>
+                <li>Ask about pros and cons of design decisions</li>
+                <li>Get help structuring your project</li>
+            </ul>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">5</div>
+    </div>
+
+    <!-- Slide 6: Inappropriate Uses -->
+    <div class="slide">
+        <div class="header">
+            <h2>✗ Inappropriate Uses of AI</h2>
+        </div>
+        <div class="content">
+            <div class="danger-box">
+                <h3 style="margin-top: 0;">Never Do This:</h3>
+            </div>
+
+            <h3>1. Direct Solution Generation</h3>
+            <ul class="cross-list">
+                <li>"Write the complete code for Lab 3"</li>
+                <li>"Give me the answer to assignment question 5"</li>
+                <li>Copying entire solutions without understanding</li>
+            </ul>
+
+            <h3>2. Bypassing the Learning Process</h3>
+            <ul class="cross-list">
+                <li>Using AI before attempting the problem yourself</li>
+                <li>Not reading the lab materials or documentation</li>
+                <li>Relying on AI instead of debugging yourself</li>
+            </ul>
+
+            <h3>3. Submitting AI Code as Your Own</h3>
+            <ul class="cross-list">
+                <li>Copy-pasting without modification or understanding</li>
+                <li>Not being able to explain your submitted code</li>
+                <li>Using AI-generated comments without verification</li>
+            </ul>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">6</div>
+    </div>
+
+    <!-- Slide 7: Best Practices -->
+    <div class="slide">
+        <div class="header">
+            <h2>Best Practices for AI Usage</h2>
+        </div>
+        <div class="content">
+            <h3>1. Always Attempt First</h3>
+            <div class="workflow-step">
+                <span class="step-number">1</span>Read lab instructions carefully
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">2</span>Review relevant documentation
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">3</span>Try to solve the problem yourself
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">4</span>Write pseudocode or outline approach
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">5</span>Only then, ask AI for specific guidance
+            </div>
+
+            <div class="highlight-box" style="margin-top: 30px;">
+                <p style="font-size: 18px;">
+                    <strong>Key Point:</strong> Struggling is part of learning. Don't rush to AI at the first sign of difficulty!
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- Slide 8: Asking Good Questions -->
+    <div class="slide">
+        <div class="header">
+            <h2>Ask Specific Questions</h2>
+        </div>
+        <div class="content">
+            <div class="two-column">
+                <div>
+                    <div class="column-header bad">❌ Bad Questions</div>
+                    <div class="example-box" style="background: #f8d7da;">
+                        "How do I do this lab?"
+                    </div>
+                    <div class="example-box" style="background: #f8d7da;">
+                        "Fix my code"
+                    </div>
+                    <div class="example-box" style="background: #f8d7da;">
+                        "Write a login system"
+                    </div>
+                </div>
+                <div>
+                    <div class="column-header good">✓ Good Questions</div>
+                    <div class="example-box" style="background: #d4edda;">
+                        "I'm implementing JWT authentication. I understand the concept, but how do I verify the token on the server side?"
+                    </div>
+                    <div class="example-box" style="background: #d4edda;">
+                        "My code throws error X on line 23. Here's what I've tried... What might cause this?"
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 30px;">
+                <p style="font-size: 18px;">
+                    <strong>Remember:</strong> Provide context, show what you've tried, ask for understanding not solutions.
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">8</div>
+    </div>
+
+    <!-- Slide 9: Understanding Before Implementing -->
+    <div class="slide">
+        <div class="header">
+            <h2>Understand Before Implementing</h2>
+        </div>
+        <div class="content">
+            <h3>When AI provides code, you must:</h3>
+            
+            <div class="workflow-step">
+                <span class="step-number">1</span>Read through it line by line
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">2</span>Look up any functions you don't recognize
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">3</span>Modify it to fit your specific needs
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">4</span>Add comments in your own words
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">5</span>Test it to ensure you understand how it works
+            </div>
+
+            <div class="danger-box" style="margin-top: 40px;">
+                <p style="font-size: 20px; font-weight: 600;">
+                    Never copy-paste AI code without understanding it!
+                </p>
+                <p style="font-size: 16px; margin-top: 10px;">
+                    If you can't explain the code, you don't understand it well enough to submit it.
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- Slide 10: Example Scenario 1 - Stuck -->
+    <div class="slide">
+        <div class="header">
+            <h2>Scenario 1: You're Completely Stuck</h2>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"I'm working on Lab 4 with file uploads using multer. I've read the docs, but I'm stuck on integrating it with my Express routes. Here's my setup: [shows code]. I understand multer processes multipart form data, but where do I configure storage and access the file in my handler?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Explains multer configuration and flow]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"So I configure multer before using it as middleware. Should I do this in the same file as my routes or separate config file?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Provides guidance on organization]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"Got it! I'll create a separate config file. Let me implement and test this."</p>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 20px;">
+                <strong>Why this works:</strong> Shows prior effort, asks for understanding, plans to implement themselves
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">10</div>
+    </div>
+
+    <!-- Slide 11: Example Scenario 2 - Debugging -->
+    <div class="slide">
+        <div class="header">
+            <h2>Scenario 2: Debugging Issues</h2>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"In my React app, clicking 'Delete' removes the wrong item. I added console.logs - the item ID is correct (id: 5), but item 3 gets deleted. Here's my delete handler: [code]. What debugging approach should I take?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Suggests checking key props and state updates]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"Ah! I'm using array index as key instead of unique ID. Let me check my map function... Yes! So React reconciles based on index position, not item identity?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Confirms and explains React reconciliation]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"That explains my form input issues too! I'll change keys to use unique IDs. Thanks!"</p>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 20px;">
+                <strong>Why this works:</strong> Self-debugged first, asked for strategy not solution, discovered the issue themselves
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">11</div>
+    </div>
+
+    <!-- Slide 12: Example Scenario 3 - Learning Framework -->
+    <div class="slide">
+        <div class="header">
+            <h2>Scenario 3: Learning New Framework</h2>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"We're starting Vue.js next lab. I know vanilla JS but no frameworks. Can you give me an overview of Vue's core concepts and how it differs from regular JavaScript?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Explains Vue basics: reactivity, components, directives]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"The reactivity concept is interesting! So when I change a data property, Vue auto-updates the DOM? Can you show a simple counter example?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Provides simple counter example]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"I see the pattern. Let me try creating a todo list component using this same pattern."</p>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 20px;">
+                <strong>Why this works:</strong> Started with concepts, requested simple example, plans to practice independently
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">12</div>
+    </div>
+
+    <!-- Slide 13: Example Scenario 4 - Project Work -->
+    <div class="slide">
+        <div class="header">
+            <h2>Scenario 4: Working on Course Project</h2>
+        </div>
+        <div class="content">
+            <div class="example-box" style="font-size: 15px;">
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"Building an e-commerce project. Planned to use Node.js/Express + React. For shopping cart, should I use localStorage (client) or database (server)? What are pros and cons?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Explains trade-offs of each approach]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"I'll use localStorage for guests, sync to database for logged-in users. For cart data structure - array of IDs or objects with details and quantities?"</p>
+                </div>
+                <div class="conversation">
+                    <p class="ai-msg">AI:</p>
+                    <p>[Provides guidance on data structure]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"Makes sense. Let me implement basic cart functionality."</p>
+                </div>
+                <div class="conversation">
+                    <p style="font-style: italic; margin: 10px 0;">[Later, after implementing...]</p>
+                </div>
+                <div class="conversation">
+                    <p class="user-msg">Student:</p>
+                    <p>"I've implemented add-to-cart [shows code]. It works but concerned about race conditions with rapid clicks. How should I handle this?"</p>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 20px;">
+                <strong>Why this works:</strong> Had a plan, asked about decisions, implemented first, then asked about specific issues
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">13</div>
+    </div>
+
+    <!-- Slide 14: Suggested Workflow -->
+    <div class="slide">
+        <div class="header">
+            <h2>Suggested Workflow for Labs</h2>
+        </div>
+        <div class="content">
+            <div class="workflow-step">
+                <span class="step-number">1</span><strong>Read and Plan (No AI)</strong> - Understand requirements, plan your approach
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">2</span><strong>Initial Implementation (Minimal AI)</strong> - Write basic structure, implement what you know
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">3</span><strong>Learning Phase (Strategic AI)</strong> - Ask about concepts you're struggling with
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">4</span><strong>Implementation (Your Code)</strong> - Write based on understanding, AI for debugging only
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">5</span><strong>Review and Improve (AI as Reviewer)</strong> - Get feedback, implement improvements yourself
+            </div>
+            <div class="workflow-step">
+                <span class="step-number">6</span><strong>Testing (Minimal AI)</strong> - Test thoroughly, debug independently when possible
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">14</div>
+    </div>
+
+    <!-- Slide 15: Red Flags -->
+    <div class="slide">
+        <div class="header">
+            <h2>⚠️ Red Flags: Signs of Misuse</h2>
+        </div>
+        <div class="content">
+            <div class="danger-box">
+                <h3 style="margin-top: 0;">Warning Signs You're Misusing AI:</h3>
+            </div>
+
+            <ul class="cross-list" style="font-size: 19px;">
+                <li>You can't explain how your code works</li>
+                <li>You're spending more time prompting AI than coding</li>
+                <li>You didn't attempt the problem before asking AI</li>
+                <li>You're copying large blocks of code without modification</li>
+                <li>You're asking AI to complete entire assignments</li>
+                <li>You feel anxious about coding without AI available</li>
+            </ul>
+
+            <div class="warning-box" style="margin-top: 40px;">
+                <p style="font-size: 20px; font-weight: 600; text-align: center;">
+                    If you recognize these signs, it's time to step back and refocus on learning!
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">15</div>
+    </div>
+
+    <!-- Slide 16: Assessment Expectations -->
+    <div class="slide">
+        <div class="header">
+            <h2>Assessment & Academic Integrity</h2>
+        </div>
+        <div class="content">
+            <h3>What Will Be Evaluated:</h3>
+            <ul>
+                <li>Your <strong>understanding</strong> of the code, not just if it works</li>
+                <li>Your ability to <strong>explain and defend</strong> implementation choices</li>
+                <li>Your <strong>problem-solving process</strong>, not just the final solution</li>
+                <li>Whether you can <strong>modify and extend</strong> your code</li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">You May Be Asked To:</h3>
+            <ul class="check-list">
+                <li>Explain your code line by line</li>
+                <li>Modify your implementation on the spot</li>
+                <li>Debug issues without AI assistance</li>
+                <li>Discuss alternatives and trade-offs</li>
+            </ul>
+
+            <div class="danger-box" style="margin-top: 30px;">
+                <p style="font-size: 18px;">
+                    <strong>Academic Honesty:</strong> Submitting code you don't understand is still academic dishonesty, even if AI is permitted.
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">16</div>
+    </div>
+
+    <!-- Slide 17: Key Principles Summary -->
+    <div class="slide">
+        <div class="header">
+            <h2>Key Principles to Remember</h2>
+        </div>
+        <div class="content">
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #2c3e50;">1. AI is a Learning Tool, Not a Shortcut</h3>
+                <p style="font-size: 18px;">Use it to enhance understanding, not bypass learning</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #2c3e50;">2. Always Attempt First</h3>
+                <p style="font-size: 18px;">Struggle is part of learning - don't rush to AI immediately</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #2c3e50;">3. Understand Everything You Submit</h3>
+                <p style="font-size: 18px;">If you can't explain it, you shouldn't submit it</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #2c3e50;">4. Write 80% Yourself</h3>
+                <p style="font-size: 18px;">AI should assist with the remaining 20% where you're stuck</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #2c3e50;">5. Ask for Understanding, Not Solutions</h3>
+                <p style="font-size: 18px;">Request explanations, concepts, and guidance - not complete code</p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">17</div>
+    </div>
+
+    <!-- Slide 18: The Ultimate Question -->
+    <div class="slide">
+        <div class="header">
+            <h2>The Ultimate Question</h2>
+        </div>
+        <div class="content">
+            <div style="text-align: center; padding: 60px 0;">
+                <div class="warning-box" style="padding: 50px;">
+                    <h3 style="font-size: 36px; margin-bottom: 30px; color: #2c3e50;">
+                        When in doubt, ask yourself:
+                    </h3>
+                    <p style="font-size: 32px; font-weight: 600; color: #e67e22; line-height: 1.6;">
+                        "Am I using AI to learn,<br>or to avoid learning?"
+                    </p>
+                </div>
+            </div>
+
+            <div class="success-box" style="margin-top: 40px;">
+                <p style="font-size: 20px; text-align: center;">
+                    <strong>Remember:</strong> The goal is to become a competent developer, not just complete assignments!
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">18</div>
+    </div>
+
+    <!-- Slide 19: Resources and Support -->
+    <div class="slide">
+        <div class="header">
+            <h2>Resources & Support</h2>
+        </div>
+        <div class="content">
+            <h3>Recommended AI Tools:</h3>
+            <ul>
+                <li>ChatGPT, Claude, or other conversational AI assistants</li>
+                <li>GitHub Copilot (for code suggestions)</li>
+                <li>Use them responsibly following these guidelines</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">Getting Help:</h3>
+            <ul>
+                <li><strong>Lab materials and documentation</strong> - Always read these first</li>
+                <li><strong>Office hours</strong> - For conceptual questions and guidance</li>
+                <li><strong>Peer discussion</strong> - Collaborate on understanding, not solutions</li>
+                <li><strong>AI tools</strong> - For specific questions after attempting yourself</li>
+            </ul>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <p style="font-size: 18px; text-align: center;">
+                    <strong>If you're unsure whether your AI use is appropriate, ask your instructor!</strong><br>
+                    We're here to help you learn effectively.
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">19</div>
+    </div>
+
+    <!-- Slide 20: Conclusion -->
+    <div class="slide">
+        <div class="header">
+            <h2>Your Journey as a Developer</h2>
+        </div>
+        <div class="content">
+            <div class="success-box" style="padding: 40px; margin-bottom: 40px;">
+                <h3 style="margin-top: 0; font-size: 28px; color: #27ae60;">
+                    Skills developed through genuine struggle will serve you far better than the ability to prompt AI effectively.
+                </h3>
+            </div>
+
+            <h3>What You'll Gain from Proper AI Use:</h3>
+            <ul class="check-list" style="font-size: 19px;">
+                <li>Deep understanding of web development concepts</li>
+                <li>Strong problem-solving and debugging skills</li>
+                <li>Ability to learn new technologies independently</li>
+                <li>Confidence to tackle real-world projects</li>
+                <li>Experience using modern development tools responsibly</li>
+            </ul>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <p style="font-size: 22px; text-align: center; font-weight: 600; color: #2c3e50;">
+                    Use AI wisely. Learn deeply. Become the developer you aspire to be.
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">20</div>
+    </div>
+
+    <!-- Slide 21: Q&A -->
+    <div class="slide title-slide">
+        <div class="content">
+            <h1 style="font-size: 64px; margin-bottom: 40px;">Questions?</h1>
+            <div style="font-size: 24px; color: #7f8c8d; line-height: 2;">
+                <p>Feel free to ask about:</p>
+                <p>• Specific scenarios and whether they're appropriate</p>
+                <p>• How to approach different types of problems</p>
+                <p>• Clarification on the guidelines</p>
+                <p>• Any concerns about AI usage in your work</p>
+            </div>
+            <div style="margin-top: 80px; padding: 30px; background: #ecf0f1; border-radius: 10px;">
+                <p style="font-size: 20px; color: #2c3e50;">
+                    <strong>Remember:</strong> When in doubt, always ask!
+                </p>
+            </div>
+        </div>
+        <div class="footer">Web Development & Net-Centric Labs</div>
+        <div class="slide-number">21</div>
+    </div>
+
+</body>
+</html>

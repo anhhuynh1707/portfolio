@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Huỳnh Tuấn Anh</title>
+    <meta name="description" content="Get in touch with Huỳnh Tuấn Anh via the contact form.">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <p class="brand"><a href="index.html"><em>anh</em>huynh.1707</a></p>
+            <ul>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+                <li><a href="map.html">MAP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="contact-title">
+            <h2 id="contact-title">Get in Touch</h2>
+            <p>
+                Feel free to contact me using the form below. I’ll do my best to reply as soon as possible.
+            </p>
+
+            <form action="#" method="post" aria-label="Contact form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Please enter your full name">
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+84 123 456 789">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Message Details</legend>
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is this about?">
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required
+                        placeholder="Write your message here..."></textarea>
+
+                    <label for="date">Preferred Contact Date:</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="topic">Topic:</label>
+                    <select id="topic" name="topic">
+                        <option value="">Select a topic</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="project">Project Collaboration</option>
+                        <option value="feedback">Website Feedback</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact Preferences</legend>
+                    <section>
+                        <label>
+                            <input type="checkbox" name="subscribe" value="yes">
+                            Subscribe to my newsletter
+                        </label>
+                    </section>
+                    <section aria-labelledby="contact-method-label">
+                        <h3 id="contact-method-label">Preferred contact method:</h3>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="contact-method" value="email" checked>
+                                    Email
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="contact-method" value="phone">
+                                    Phone
+                                </label>
+                            </li>
+                        </ul>
+                    </section>
+                </fieldset>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <small>© 2025 Huỳnh Tuấn Anh | <a href="policy.html">Privacy Policy</a></small>
+    </footer>
+</body>
+
+</html>
