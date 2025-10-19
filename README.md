@@ -8,50 +8,50 @@ This project showcases my skills, projects, and achievements — reflecting my j
 ## 🌐 Site Map
 
 ### 🏠 Home  
-![Home Page](assets/img/screenshots/homepage.png)  
+![Home Page](assets/img/screenshot/homepage.png)  
 The homepage introduces who I am, featuring a hero section, navigation bar, and a brief overview of my portfolio.
 
 ---
 
 ### 👨‍💻 About Me  
-![About Page](assets/img/screenshots/about.png)  
+![About Page](assets/img/screenshot/about.png)  
 This section presents my background, education, and personal story as a web developer.
 
 ---
 
 ### 💼 Projects / Portfolio  
-![Projects Page](assets/img/screenshots/projects.png)  
+![Projects Page](assets/img/screenshot/projects.png)  
 Displays my selected works and coding projects with descriptions and links to GitHub repositories or live demos.
 
 ---
 
 ### 🖼️ Gallery  
-![Gallery Page](assets/img/screenshots/gallery.png)  
+![Gallery Page](assets/img/screenshot/gallery.png)  
 A visual collection of images from my travels and experiences — showcasing design and photography aesthetics.
 
 ---
 
 ### 📞 Contact  
-![Contact Page](assets/img/screenshots/contact.png)  
+![Contact Page](assets/img/screenshot/contact.png)  
 Includes my email, social links, and a form for visitors to get in touch easily.
 
 ---
 
 ### 🔒 Privacy Policy  
-![Privacy Page](assets/img/screenshots/policyy.png)  
+![Privacy Page](assets/img/screenshot/policyy.png)  
 Details how user information is handled and protected when visiting my website.
 
 ---
 
 ### ✍️ Blog  
-![Blog Page](assets/img/screenshots/blog.png)  
+![Blog Page](assets/img/screenshot/blog.png)  
 A section where I share thoughts, tutorials, and experiences related to web development, design, and personal growth.  
 Includes article previews, post dates, and category tags for easy navigation.
 
 ---
 
 ### 🗺️ Map  
-![Map Page](assets/img/screenshots/map.png)  
+![Map Page](assets/img/screenshot/map.png)  
 An interactive map displaying my favorite places, travels, or project locations.  
 Uses embedded Google Maps for location visualization and smooth scrolling experience.
 
