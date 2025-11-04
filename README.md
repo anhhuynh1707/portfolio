@@ -38,7 +38,7 @@ Includes my email, social links, and a form for visitors to get in touch easily.
 ---
 
 ### 🔒 Privacy Policy  
-![Privacy Page](assets/img/screenshot/policyy.png)  
+![Privacy Page](assets/img/screenshot/policy.png)  
 Details how user information is handled and protected when visiting my website.
 
 ---
